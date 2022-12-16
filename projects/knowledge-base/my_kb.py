@@ -132,8 +132,6 @@ class KnowledgeBase(object):
         """
         printv("Retracting {!r}", 0, verbose, [fact_rule])
         ####################################################
-        # Student code goes here
-
         # If fact_rule has no support: remove it and adjust supported_by, supported_facts, supported_rules
         # If fact_rule is asserted and has support: unassert it
         # Else: do nothing
@@ -204,8 +202,6 @@ class InferenceEngine(object):
             [fact.statement, rule.lhs, rule.rhs])
         
         ####################################################
-        # Student code goes here
-
         #Implement the Forward Chaining inferences that occur 
         # upon asserting facts and rules into the KB - i.e., 
         # implement the `InferenceEnginer.fc_infer` method.

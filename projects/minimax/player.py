@@ -31,7 +31,6 @@ class Player(object):
         return -len(game_rules.getLegalMoves(board, 'o' if symbol == 'x' else 'x'))
 
 
-# This class has been replaced with the code for a deterministic player.
 class MinimaxPlayer(Player):
     def __init__(self, symbol, depth): 
         super(MinimaxPlayer, self).__init__(symbol) 
@@ -42,9 +41,8 @@ class MinimaxPlayer(Player):
     def selectInitialO(self, board):
         validMoves = game_rules.getFirstMovesForO(board)
         return list(validMoves)[0]
-
-    # Edit this one here. :)
     
+    # minimax code
     def getMove(self, board):
         legalMoves = game_rules.getLegalMoves(board, self.symbol)   #get legal moves
         if len(legalMoves) == None or self.depth == 0:
@@ -101,7 +99,6 @@ class MinimaxPlayer(Player):
         return move
     
 
-# This class has been replaced with the code for a deterministic player.
 class AlphaBetaPlayer(Player):
     def __init__(self, symbol, depth): 
         super(AlphaBetaPlayer, self).__init__(symbol)
@@ -113,7 +110,7 @@ class AlphaBetaPlayer(Player):
         validMoves = game_rules.getFirstMovesForO(board)
         return list(validMoves)[0]
 
-    # Edit this one here. :)
+    # a-b pruning code
     def getMove(self, board):
         legalMoves = game_rules.getLegalMoves(board, self.symbol)
         if len(legalMoves) == None or self.depth == 0:
